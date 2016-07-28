@@ -1,10 +1,36 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.github.helpermethod</groupId>
+
+    <groupId>com.predic8.membrane</groupId>
     <artifactId>membrane-maven-plugin</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>maven-plugin</packaging>
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>A Maven plugin for the Membrane Service Proxy.</description>
+    <url>http://www.membrane-soa.org/</url>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Oliver Weiler</name>
+            <email>weiler@predic8.de</email>
+            <organization>predic8</organization>
+            <organizationUrl>www.predic8.de</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:https://github.com/helpermethod/membrane-maven-plugin.git</connection>
+        <developerConnection>scm:git:https://github.com/helpermethod/membrane-maven-plugin.git</developerConnection>
+        <url>https://github.com/helpermethod/membrane-maven-plugin</url>
+    </scm>
 
     <dependencies>
         <dependency>
@@ -21,7 +47,7 @@
         <dependency>
             <groupId>org.membrane-soa</groupId>
             <artifactId>service-proxy-core</artifactId>
-            <version>4.2.0</version>
+            <version>4.2.2</version>
         </dependency>
     </dependencies>
 
@@ -35,6 +61,33 @@
                     <execution>
                         <id>default-descriptor</id>
                         <phase>process-classes</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.4</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
