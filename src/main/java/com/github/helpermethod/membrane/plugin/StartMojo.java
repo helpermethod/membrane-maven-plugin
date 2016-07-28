@@ -9,7 +9,7 @@ import org.apache.maven.plugins.annotations.Parameter;
 
 @Mojo(name = "start", defaultPhase = LifecyclePhase.PRE_INTEGRATION_TEST)
 public class StartMojo extends AbstractMojo {
-    @Parameter(property = "membrane.proxiesPath", defaultValue = "src/it/proxies.xml")
+    @Parameter(property = "membrane.proxiesPath", defaultValue = "src/test/resources/proxies.xml")
     private String proxiesPath;
     @Parameter(property = "membrane.skip", defaultValue = "false")
     private boolean skip;
