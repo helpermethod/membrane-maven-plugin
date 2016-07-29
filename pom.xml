@@ -10,6 +10,10 @@
     <description>A Maven plugin for the Membrane Service Proxy.</description>
     <url>http://www.membrane-soa.org/</url>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
     <licenses>
         <license>
             <name>The Apache License, Version 2.0</name>

@@ -1,4 +1,4 @@
-package com.github.helpermethod.membrane.plugin;
+package com.predic8.membrane.plugin;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
