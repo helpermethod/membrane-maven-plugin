@@ -23,7 +23,7 @@ import org.apache.maven.plugins.annotations.Parameter;
 
 @Mojo(name = "run")
 public class RunMojo extends AbstractMojo {
-	@Parameter(property = "membrane.proxiesPath", defaultValue = "src/test/resources/proxies.xml")
+	@Parameter(property = "membrane.proxiesPath", defaultValue = "src/main/resources/proxies.xml")
 	private String proxiesPath;
 
 	public void execute() throws MojoExecutionException, MojoFailureException {
