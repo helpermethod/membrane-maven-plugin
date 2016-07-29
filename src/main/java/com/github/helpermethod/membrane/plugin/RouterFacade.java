@@ -6,14 +6,14 @@ import org.apache.maven.plugin.MojoFailureException;
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
-public class RouterFacade {
+class RouterFacade {
     private final Router router;
 
     private RouterFacade(Router router) {
         this.router = router;
     }
 
-    public static RouterFacade createStarted(String proxiesPath) throws MojoFailureException {
+    static RouterFacade createStarted(String proxiesPath) throws MojoFailureException {
         try {
             return new RouterFacade(Router.init(proxiesPath));
         } catch (MalformedURLException e) {
@@ -21,11 +21,11 @@ public class RouterFacade {
         }
     }
 
-    public void stop() {
+    void stop() {
         router.stop();
     }
 
-    public void waitForFinish() {
+    void waitForFinish() {
         try {
             router.getBackgroundInitializator().awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
         } catch (InterruptedException e) {
