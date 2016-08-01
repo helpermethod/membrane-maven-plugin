@@ -17,13 +17,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.predic8.membrane</groupId>
+    <groupId>com.helpermethod</groupId>
     <artifactId>membrane-maven-plugin</artifactId>
     <version>1.0</version>
     <packaging>maven-plugin</packaging>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>A Maven plugin for the Membrane Service Proxy.</description>
-    <url>http://www.membrane-soa.org/</url>
+    <url>https://github.com/helpermethod/membrane-maven-plugin/</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -39,9 +39,7 @@
     <developers>
         <developer>
             <name>Oliver Weiler</name>
-            <email>weiler@predic8.de</email>
-            <organization>predic8</organization>
-            <organizationUrl>www.predic8.de</organizationUrl>
+            <email>wo6980@gmail.com</email>
         </developer>
     </developers>
 
@@ -83,7 +81,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
 
