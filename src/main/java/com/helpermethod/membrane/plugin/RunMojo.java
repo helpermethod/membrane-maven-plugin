@@ -13,27 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.predic8.membrane.plugin;
+package com.helpermethod.membrane.plugin;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
-import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 
-@Mojo(name = "start", defaultPhase = LifecyclePhase.PRE_INTEGRATION_TEST)
-public class StartMojo extends AbstractMojo {
-    @Parameter(property = "membrane.proxiesPath", defaultValue = "src/main/resources/proxies.xml")
-    private String proxiesPath;
-    @Parameter(property = "membrane.skip", defaultValue = "false")
-    private boolean skip;
+@Mojo(name = "run")
+public class RunMojo extends AbstractMojo {
+	@Parameter(property = "membrane.proxiesPath", defaultValue = "src/main/resources/proxies.xml")
+	private String proxiesPath;
 
-    public void execute() throws MojoExecutionException, MojoFailureException {
-        if (skip) {
-            return;
-        }
-
-        getPluginContext().put("router", RouterFacade.createStarted(proxiesPath));
-    }
+	public void execute() throws MojoExecutionException, MojoFailureException {
+		RouterFacade.createStarted(proxiesPath).waitForFinish();
+	}
 }

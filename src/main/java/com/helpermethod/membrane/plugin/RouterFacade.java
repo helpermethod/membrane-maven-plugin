@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.predic8.membrane.plugin;
+package com.helpermethod.membrane.plugin;
 
 import com.predic8.membrane.core.Router;
 import org.apache.maven.plugin.MojoFailureException;
